@@ -70,9 +70,11 @@ p users["Avril"][:pets][0][:species]
 p users["Erik"][:lottery_numbers].min
 
 # 6. Return an array of Avril's lottery numbers that are even
+even_number = []
 for number in users["Avril"][:lottery_numbers]
-  p number if number%2 == 0
+  even_number << number if number%2 == 0
 end
+p even_number
 
 # 7. Erik is one lottery number short! Add the number `7` to be included in his lottery numbers
 users["Erik"][:lottery_numbers] << 7
@@ -83,7 +85,9 @@ users["Erik"][:home_town] = "Edinburgh"
 p users["Erik"][:home_town]
 
 # 9. Add a pet dog to Erik called "Fluffy"
-users["Erik"][:pets][4] = {name: "Fluffy", species: "dog"}
+# users["Erik"][:pets][4] = {name: "Fluffy", species: "dog"}
+# better way (you don't need to know last index of the array):
+users["Erik"][:pets] << {name: "Fluffy", species: "dog"}
 p users["Erik"][:pets]
 
 # 10. Add another person to the users hash
@@ -99,4 +103,4 @@ users["Antonio"] = {
   ]
 }
 
-p users
+p users["Antonio"]

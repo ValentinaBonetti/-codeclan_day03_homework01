@@ -18,18 +18,24 @@ for stop in stops
   position += 1
 end
 puts "The index of Linlithgow stop is #{here}"
+
+# you can also do it the hash way...
+p "The index of Linlithgow stop is #{stops.index("Linlithgow")}"
+
 puts
 
 # 5. Remove `"Livingston"` from the array using its name
-for stop in stops
-  if stop == "Linlithgow"
-    here = position
-  end
-  position += 1
-end
+# for stop in stops
+#   if stop == "Livingston"
+#     here = position
+#   end
+#   position += 1
+# end
+stops.delete("Livingston")
+
 
 # 6. Delete `"Cumbernauld"` from the array by index
-stops.delete("Linlithgow")
+stops.delete_at(2)
 
 # 7. How many stops there are in the array?
 number_of_stops = stops.length
@@ -42,6 +48,7 @@ p stops[3]
 p stops[-5]
 p stops.select {|e| e[0] == "F" }
 puts "...but probably many more!"
+p stops.at(3)
 puts
 
 # 9. Reverse the positions of the stops in the array
